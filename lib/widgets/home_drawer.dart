@@ -38,6 +38,8 @@ class HomeDrawer extends StatelessWidget {
                   ),
                   MenuItems("Home", Icons.home, () {
                     Navigator.of(context).popAndPushNamed(HomeScreen.routeName);
+                    // Navigator.of(context)
+                    //     .popUntil((route) => route == HomeScreen.routeName);
                   }),
                   MenuItems("Quick Notes", Icons.notes, () {}),
                   MenuItems("User Details", Icons.account_box_outlined, () {

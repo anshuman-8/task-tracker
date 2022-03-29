@@ -18,7 +18,7 @@ const String _heroAddTodo = 'add-todo-hero';
 class _HomeScreenState extends State<HomeScreen> {
   Widget speedDial() {
     return SpeedDial(
-      animationSpeed: 10000,
+      animationSpeed: 360,
       label: Text("Add"),
       animatedIcon: AnimatedIcons.menu_close,
       animatedIconTheme: IconThemeData(size: 22),
@@ -34,7 +34,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 Icons.task_alt_sharp,
               ),
             ),
-            
             backgroundColor: Colors.green,
             onTap: () => Navigator.of(context).push(HeroDialogRoute(
                   builder: (context) {
@@ -88,7 +87,6 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       floatingActionButton: speedDial(),
-      
     );
   }
 }

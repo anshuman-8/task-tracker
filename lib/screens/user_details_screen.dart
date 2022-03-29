@@ -17,6 +17,7 @@ class UserDetails extends StatelessWidget {
               //   child: Text("Your Details: "),
               // ),
               Container(
+                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                 child: Text("First Name"),
               ),
               Padding(
@@ -27,7 +28,7 @@ class UserDetails extends StatelessWidget {
                     hintText: 'Enter a search term',
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ));

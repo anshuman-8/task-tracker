@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
+import 'package:provider/provider.dart';
+import 'package:task_tracker/modals/todo.dart';
+import 'package:task_tracker/widgets/todo_card.dart';
 
 class HomeScreenItems extends StatefulWidget {
   @override
@@ -39,6 +42,7 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
 
   @override
   Widget build(BuildContext context) {
+    final todoitem = Provider.of<TodoProvider>(context);
     return Container(
       width: double.infinity,
       child: Column(
@@ -88,7 +92,7 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
                         TextField(
                           autofocus: false,
                           decoration: InputDecoration(
-                            hintText: "Call Sam at 4 ",
+                            hintText: "e.g. Call Sam at 4 ",
                             suffixIcon: IconButton(
                                 onPressed: () {},
                                 icon: Icon(
@@ -160,6 +164,38 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
                 ],
               ),
             ),
+          ),
+          const SizedBox(
+            height: 23,
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 1, horizontal: 25),
+            child: Text(
+              "Todays work: ",
+              style: TextStyle(fontSize: 19),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(vertical: 2, horizontal: 7),
+            decoration: BoxDecoration(
+                boxShadow: const [
+                  BoxShadow(
+                    offset: Offset(2, 2),
+                    blurRadius: 12,
+                    color: Color.fromRGBO(0, 0, 0, 0.16),
+                  )
+                ],
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(23),
+                border: Border.all(color: Colors.blueGrey, width: 2)),
+            height: MediaQuery.of(context).size.height * 0.37,
+            child: ListView.builder(
+                itemCount: todoitem.todoItems.length,
+                itemBuilder: (context, index) {
+                  return TodoCard(
+                    index: index,
+                  );
+                }),
           )
         ],
       ),
