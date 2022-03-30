@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
 
-const backgroundColor = Color.fromRGBO(36, 36, 36, 1);
-const buttonColor = Color.fromRGBO(14, 114, 236, 1);
-const footerColor = Color.fromRGBO(26, 26, 26, 1);
-const secondaryBackgroundColor = Color.fromRGBO(46, 46, 46, 1);
+final backgroundColor = Colors.teal[400];
+final buttonColor = Colors.blueGrey[600];
+final textColor = Colors.white;
+final lightBackgroundColor = Colors.teal[200];
+final primaryColor = Colors.teal;
+final secondaryColor = Colors.deepPurple;
+final tertiaryColor = Colors.teal[800];
+
+
+// final backgroundColor = Colors.amberAccent;
+// final buttonColor = Colors.blueGrey;
+// final textColor = Colors.white;
+// final lightBackgroundColor = Colors.lightGreen;
+// final primaryColor = Colors.purpleAccent;
+// final secondaryColor = Colors.deepPurple;

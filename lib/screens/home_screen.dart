@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
 import 'package:task_tracker/screens/home_items.dart';
+import 'package:task_tracker/utils/colors.dart';
 import 'package:task_tracker/widgets/home_drawer.dart';
 import 'package:task_tracker/widgets/pop_todo_card.dart';
 
@@ -65,14 +66,14 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: HomeDrawer(),
-      backgroundColor: Colors.teal[200],
+      backgroundColor: backgroundColor,
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
             floating: true,
             pinned: false,
             snap: false,
-            backgroundColor: Colors.teal[200],
+            backgroundColor: backgroundColor,
             title: Text(
               "Home",
               style: TextStyle(

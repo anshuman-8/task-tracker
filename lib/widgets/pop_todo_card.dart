@@ -3,6 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:task_tracker/modals/todo.dart';
+import 'package:task_tracker/utils/colors.dart';
 
 class AddTodoPopupCard extends StatefulWidget {
   AddTodoPopupCard({Key? key}) : super(key: key);
@@ -21,6 +22,23 @@ class _AddTodoPopupCardState extends State<AddTodoPopupCard> {
 
   void changeDate() {
     showDatePicker(
+            builder: (context, child) {
+              return Theme(
+                data: Theme.of(context).copyWith(
+                  colorScheme: const ColorScheme.light(
+                    primary: Colors.teal, // header background color
+                    onPrimary: Colors.white, // header text color
+                    onSurface: Colors.blueGrey, // body text color
+                  ),
+                  textButtonTheme: TextButtonThemeData(
+                    style: TextButton.styleFrom(
+                      primary: primaryColor, // button text color
+                    ),
+                  ),
+                ),
+                child: child!,
+              );
+            },
             context: context,
             initialDate: DateTime.now(),
             firstDate: DateTime.now(),
@@ -39,6 +57,7 @@ class _AddTodoPopupCardState extends State<AddTodoPopupCard> {
   Widget build(BuildContext context) {
     final todoitemAdd = Provider.of<TodoProvider>(context).addTodo;
     return Center(
+      // heightFactor: 350,
       child: Padding(
         padding: const EdgeInsets.all(32.0),
         child: Hero(
@@ -58,13 +77,22 @@ class _AddTodoPopupCardState extends State<AddTodoPopupCard> {
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
+                          Container(
+                            height: 20,
+                            alignment: Alignment.topRight,
+                            child: CloseButton(
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                            ),
+                          ),
                           TextFormField(
                             controller: titleCtrl,
                             decoration: InputDecoration(
                               hintText: 'New todo',
                               border: InputBorder.none,
                             ),
-                            cursorColor: Colors.white,
+                            cursorColor: tertiaryColor,
                           ),
                           const Divider(
                             color: Colors.white,
@@ -73,11 +101,11 @@ class _AddTodoPopupCardState extends State<AddTodoPopupCard> {
                           TextFormField(
                             controller: descriptionCtrl,
                             decoration: InputDecoration(
-                              hintText: 'Write a note',
+                              hintText: 'Description',
                               border: InputBorder.none,
                             ),
-                            cursorColor: Colors.white,
-                            maxLines: 4,
+                            cursorColor: tertiaryColor,
+                            maxLines: 3,
                           ),
                           const Divider(
                             color: Colors.white,
@@ -91,7 +119,7 @@ class _AddTodoPopupCardState extends State<AddTodoPopupCard> {
                                   style: ButtonStyle(
                                       backgroundColor:
                                           MaterialStateProperty.all(
-                                              Colors.teal[400]),
+                                              Colors.black12),
                                       foregroundColor:
                                           MaterialStateProperty.all(
                                               Colors.black)),
@@ -146,7 +174,7 @@ class _AddTodoPopupCardState extends State<AddTodoPopupCard> {
                           ElevatedButton(
                             style: ButtonStyle(
                               backgroundColor:
-                                  MaterialStateProperty.all(Colors.teal[500]),
+                                  MaterialStateProperty.all(buttonColor),
                             ),
                             onPressed: () {
                               if (titleCtrl.text.trim() == "") {
@@ -170,6 +198,9 @@ class _AddTodoPopupCardState extends State<AddTodoPopupCard> {
                                   fontWeight: FontWeight.bold),
                             ),
                           ),
+                          SizedBox(
+                            height: 65,
+                          )
                         ],
                       ),
                     ),

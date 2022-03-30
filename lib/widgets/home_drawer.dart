@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task_tracker/screens/home_screen.dart';
 import 'package:task_tracker/screens/user_details_screen.dart';
+import 'package:task_tracker/utils/colors.dart';
 
 class HomeDrawer extends StatelessWidget {
   const HomeDrawer({Key? key}) : super(key: key);
@@ -29,7 +30,7 @@ class HomeDrawer extends StatelessWidget {
                     height: 85,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: Colors.teal[200],
+                      color: lightBackgroundColor,
                     ),
                     child: Text("Anshuman"),
                   ),
@@ -37,7 +38,7 @@ class HomeDrawer extends StatelessWidget {
                     height: 10,
                   ),
                   MenuItems("Home", Icons.home, () {
-                    Navigator.of(context).popAndPushNamed(HomeScreen.routeName);
+                    Navigator.of(context).pop();
                     // Navigator.of(context)
                     //     .popUntil((route) => route == HomeScreen.routeName);
                   }),

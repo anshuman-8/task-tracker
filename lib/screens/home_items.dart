@@ -92,7 +92,7 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
                         TextField(
                           autofocus: false,
                           decoration: InputDecoration(
-                            hintText: "e.g. Call Sam at 4 ",
+                            hintText: "e.g. History test on friday ",
                             suffixIcon: IconButton(
                                 onPressed: () {},
                                 icon: Icon(
@@ -189,13 +189,29 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
                 borderRadius: BorderRadius.circular(23),
                 border: Border.all(color: Colors.blueGrey, width: 2)),
             height: MediaQuery.of(context).size.height * 0.37,
-            child: ListView.builder(
-                itemCount: todoitem.todoItems.length,
-                itemBuilder: (context, index) {
-                  return TodoCard(
-                    index: index,
-                  );
-                }),
+            width: double.infinity,
+            child: todoitem.todoItems.length == 0
+                ? Column(
+                    children: [
+                      Container(
+                        height: MediaQuery.of(context).size.height * 0.24,
+                        child: Image.asset(
+                          "./assets/images/task_completed.jpg",
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                      Text(
+                        "NO TASK...",
+                      )
+                    ],
+                  )
+                : ListView.builder(
+                    itemCount: todoitem.todoItems.length,
+                    itemBuilder: (context, index) {
+                      return TodoCard(
+                        index: index,
+                      );
+                    }),
           )
         ],
       ),

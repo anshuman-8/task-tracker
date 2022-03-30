@@ -36,6 +36,7 @@ class _TodoCardState extends State<TodoCard> {
     var item = todoitem.todoItems[widget.index];
     boxColor(item.lable);
     return Dismissible(
+      direction: DismissDirection.endToStart,
       key: ValueKey(todoitem.todoItems[widget.index].id),
       onDismissed: (dir) {
         Provider.of<TodoProvider>(context, listen: false)
@@ -109,6 +110,7 @@ class _TodoCardState extends State<TodoCard> {
           title: Text(item.title.toString()),
           subtitle: Text(item.description.toString()),
           trailing: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Text(DateFormat.MMMd('en_US').format(item.endDate)),
               !((item.lable.toString()) == "null")
