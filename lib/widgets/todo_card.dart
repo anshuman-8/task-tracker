@@ -34,7 +34,7 @@ class _TodoCardState extends State<TodoCard> {
   Widget build(BuildContext context) {
     final todoitem = Provider.of<TodoProvider>(context);
     var item = todoitem.todoItems[widget.index];
-    boxColor(item.lable);
+    boxColor(item.label);
     return Dismissible(
       direction: DismissDirection.endToStart,
       key: ValueKey(todoitem.todoItems[widget.index].id),
@@ -113,9 +113,9 @@ class _TodoCardState extends State<TodoCard> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Text(DateFormat.MMMd('en_US').format(item.endDate)),
-              !((item.lable.toString()) == "null")
+              !((item.label.toString()) == "null")
                   ? Text(
-                      item.lable.toString().toUpperCase(),
+                      item.label.toString().toUpperCase(),
                       style: TextStyle(color: color),
                     )
                   : SizedBox()

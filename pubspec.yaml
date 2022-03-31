@@ -44,6 +44,10 @@ dev_dependencies:
   image_picker: ^0.8.4+11
   provider: ^6.0.2
   intl: ^0.17.0
+  shared_preferences: ^2.0.13
+  sqflite: ^2.0.2
+  path: ^1.8.0
+  # flutter_local_notifications: ^9.4.0
 
 
 
