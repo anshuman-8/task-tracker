@@ -10,15 +10,20 @@ class MainSpeedDial extends StatefulWidget {
   @override
   State<MainSpeedDial> createState() => _MainSpeedDialState();
 }
+
 const String _heroAddTodo = 'add-todo-hero';
+
 class _MainSpeedDialState extends State<MainSpeedDial> {
   @override
   Widget build(BuildContext context) {
     return SpeedDial(
       animationSpeed: 360,
-      label: Text("Add"),
-      animatedIcon: AnimatedIcons.menu_close,
-      animatedIconTheme: IconThemeData(size: 22),
+      // label: const Text(
+      //   "Add",
+      //   style: TextStyle(height: 23, color: Colors.white),
+      // ),
+      icon: Icons.add,
+      animatedIconTheme: IconThemeData(size: 19),
       backgroundColor: Colors.green,
       visible: true,
       curve: Curves.bounceIn,
@@ -41,7 +46,7 @@ class _MainSpeedDialState extends State<MainSpeedDial> {
             labelStyle: const TextStyle(
                 fontWeight: FontWeight.w500,
                 color: Colors.white,
-                fontSize: 16.0),
+                fontSize: 14.0),
             labelBackgroundColor: Colors.green),
         // FAB 2
         SpeedDialChild(
@@ -52,7 +57,7 @@ class _MainSpeedDialState extends State<MainSpeedDial> {
             labelStyle: TextStyle(
                 fontWeight: FontWeight.w500,
                 color: Colors.white,
-                fontSize: 16.0),
+                fontSize: 14.0),
             labelBackgroundColor: Colors.green)
       ],
     );

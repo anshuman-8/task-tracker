@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData.light().copyWith(
           scaffoldBackgroundColor: backgroundColor,
         ),
+        // home: BottomAppBar(),
         home: HomeScreen(),
         routes: {
           HomeScreen.routeName: (context) => HomeScreen(),
