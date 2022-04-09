@@ -6,7 +6,7 @@ import '../database/todo_database.dart';
 class Todo {
   String id;
   String title;
-  String description;
+  String? description;
   bool isDone;
   DateTime endDate;
   DateTime dateTime;
@@ -60,12 +60,12 @@ class TodoProvider with ChangeNotifier {
   }
 
   Future<void> addTodo(
-      String title, String description, DateTime endDate, String? lable) async {
+      String title, String description, DateTime endDate, String? label) async {
     final datetime = DateTime.now();
     final id = await NotesDatabase.addToDb(
-        title, description, endDate, datetime, lable);
+        title, description, endDate, datetime, label);
     _todoItems.add(Todo(
-        id.toString(), title, description, false, endDate, datetime, lable));
+        id.toString(), title, description, false, endDate, datetime, label));
 
     notifyListeners();
   }

@@ -25,18 +25,24 @@ class NotesDatabase {
 
   Future _createDb(db, version) async {
     // final idType=''
-    return await db.execute(
-        '''CREATE TABLE todo_database(id INTEGER PRIMARY KEY AUTOINCREMENT,title TEXT NOT NULL,description TEXT, isDone BOOLEAN NOT NULL,endDate TEXT, dateTime TEXT NOT NULL,label TEXT) ''');
+    print("1 : making database");
+    return await db.rawInsert(
+        'CREATE TABLE todo_database(id INTEGER PRIMARY KEY AUTOINCREMENT,title TEXT NOT NULL,description TEXT, isDone BOOLEAN NOT NULL,endDate TEXT, dateTime TEXT NOT NULL,label TEXT) ');
   }
 
   static Future<int> addToDb(String title, String description, DateTime endDate,
       DateTime datetime, String? lable) async {
     final db = await instance.database;
     lable ??= '';
-    int id1 = await db.rawInsert(
-        'INSERT INTO todo_database(title,description,isDone, endDate,dateTime,label ) VALUES(${title.toString()}, ${description.toString()},0,${endDate.toIso8601String()},${datetime.toIso8601String()},${lable.toString()} )');
-    print('inserted1: $id1');
-    return id1;
+    try {
+      int id1 = await db.rawInsert(
+          'INSERT INTO todo_database(title,description,isDone, endDate,dateTime,label ) VALUES(${title.toString()}, ${description.toString()},0,${endDate.toIso8601String()},${datetime.toIso8601String()},${lable.toString()} )');
+      print('inserted1: $id1');
+      return id1;
+    } catch (e) {
+      print("2 error: ${e.toString()}");
+    }
+    return -1;
   }
 
   static Future<List<Map<String, dynamic>>> getTodo() async {

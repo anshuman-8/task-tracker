@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:task_tracker/modals/todo.dart';
 import 'package:task_tracker/utils/colors.dart';
+import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 
 class AddTodoPopupCard extends StatefulWidget {
   AddTodoPopupCard({Key? key}) : super(key: key);
@@ -80,11 +81,17 @@ class _AddTodoPopupCardState extends State<AddTodoPopupCard> {
                           Container(
                             height: 20,
                             alignment: Alignment.topRight,
-                            child: CloseButton(
+                            child: IconButton(
+                              icon: Icon(EvaIcons.close),
                               onPressed: () {
                                 Navigator.of(context).pop();
                               },
                             ),
+                            // child: CloseButton(
+                            //   onPressed: () {
+                            //     Navigator.of(context).pop();
+                            //   },
+                            // ),
                           ),
                           TextFormField(
                             controller: titleCtrl,

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
-import 'package:task_tracker/utils/colors.dart';
 import 'package:task_tracker/widgets/pop_todo_card.dart';
 
 class MainSpeedDial extends StatefulWidget {
@@ -54,7 +53,7 @@ class _MainSpeedDialState extends State<MainSpeedDial> {
             backgroundColor: Colors.green,
             onTap: () {},
             label: 'Reminder',
-            labelStyle: TextStyle(
+            labelStyle: const TextStyle(
                 fontWeight: FontWeight.w500,
                 color: Colors.white,
                 fontSize: 14.0),

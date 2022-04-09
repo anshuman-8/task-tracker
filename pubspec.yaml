@@ -48,6 +48,7 @@ dev_dependencies:
   sqflite: ^2.0.2
   path: ^1.8.0
   curved_navigation_bar: ^1.0.3
+  eva_icons_flutter: ^3.1.0
   # flutter_local_notifications: ^9.4.0
 
 

@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 import 'package:task_tracker/modals/todo.dart';
+import 'package:task_tracker/modals/user.dart';
 import 'package:task_tracker/widgets/todo_card.dart';
 
 class HomeScreenItems extends StatefulWidget {
@@ -42,7 +43,9 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
 
   @override
   Widget build(BuildContext context) {
-    final todoitem = Provider.of<TodoProvider>(context);
+    var todoitem = Provider.of<TodoProvider>(context);
+    // var userData = UserData;
+
     return Container(
       width: double.infinity,
       child: Column(
@@ -52,7 +55,7 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
             padding: EdgeInsets.symmetric(horizontal: 25, vertical: 1),
             alignment: Alignment.topLeft,
             child: Text(
-              " ${greeting()} Anshuman",
+              " ${greeting()} Anshuman ",
               textAlign: TextAlign.left,
               style: TextStyle(color: Colors.white, fontSize: 21),
             ),
