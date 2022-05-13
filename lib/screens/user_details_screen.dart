@@ -15,7 +15,7 @@ class UserDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     var userData = Provider.of<UserData>(context);
     return Scaffold(
-        backgroundColor: Colors.teal[100],
+        backgroundColor: Color.fromARGB(255, 139, 204, 199),
         appBar: AppBar(
           title: Text("Details"),
           backgroundColor: Colors.teal,
@@ -63,7 +63,8 @@ class UserDetails extends StatelessWidget {
                 child: TextFormField(
                   controller: emailCtrl,
                   keyboardType: TextInputType.emailAddress,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
+                    fillColor: Colors.white,
                     border: OutlineInputBorder(),
                     hintText: 'Email',
                   ),
@@ -72,14 +73,20 @@ class UserDetails extends StatelessWidget {
               SizedBox(
                 height: 34,
               ),
-              Container(
-                  width: 45, //MediaQuery.of(context).size.width * 0.3,
-                  child: ElevatedButton(
-                      onPressed: () {
-                        userData.setUser(fNameCtrl.text, lNameCtrl.text,
-                            emailCtrl.text, ageCtrl.text);
-                      },
-                      child: Text("Save")))
+              SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.3,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ElevatedButton.icon(
+                          onPressed: () {
+                            userData.setUser(fNameCtrl.text, lNameCtrl.text,
+                                emailCtrl.text, ageCtrl.text);
+                          },
+                          icon: Icon(Icons.save_rounded),
+                          label: Text("Save")),
+                    ],
+                  ))
             ],
           ),
         ));

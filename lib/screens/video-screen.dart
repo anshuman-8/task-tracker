@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class TwitterScreen extends StatelessWidget {
-  static String routeName = '/twitter-screen';
+class VideoScreen extends StatelessWidget {
+  static String routeName = '/video-screen';
 
-  const TwitterScreen({Key? key}) : super(key: key);
+  const VideoScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class TwitterScreen extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            child: Text("Post"),
+            child: Text("Video"),
             color: Colors.amber,
             width: MediaQuery.of(context).size.width * 0.91,
             height: MediaQuery.of(context).size.height * 0.27,

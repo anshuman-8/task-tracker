@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:task_tracker/screens/home_screen.dart';
+import 'package:task_tracker/screens/qr-scanner.dart';
+import 'package:task_tracker/screens/settings.dart';
 import 'package:task_tracker/screens/user_details_screen.dart';
 import 'package:task_tracker/utils/colors.dart';
 
@@ -46,13 +49,18 @@ class HomeDrawer extends StatelessWidget {
                   MenuItems("User Details", Icons.account_box_outlined, () {
                     Navigator.of(context).pushNamed(UserDetails.routeName);
                   }),
+                  MenuItems("Scan QR", Icons.qr_code_scanner, () {
+                    Navigator.of(context).pushNamed(QRScanner.routeName);
+                  }),
                   Divider(
                     thickness: 2,
                     color: Colors.blueGrey[200],
                     endIndent: 9,
                     indent: 9,
                   ),
-                  MenuItems("Settings", Icons.settings, () {})
+                  MenuItems("Settings", Icons.settings, () {
+                    Navigator.of(context).pushNamed(Settings.routeName);
+                  })
                 ],
               ),
             ),

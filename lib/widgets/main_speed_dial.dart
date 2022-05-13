@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
-
+import '../screens/qr-scanner.dart';
 import 'package:task_tracker/widgets/pop_todo_card.dart';
 
 class MainSpeedDial extends StatefulWidget {
@@ -16,7 +16,7 @@ class _MainSpeedDialState extends State<MainSpeedDial> {
   @override
   Widget build(BuildContext context) {
     return SpeedDial(
-      animationSpeed: 360,
+      animationSpeed: 250,
       // label: const Text(
       //   "Add",
       //   style: TextStyle(height: 23, color: Colors.white),
@@ -57,7 +57,23 @@ class _MainSpeedDialState extends State<MainSpeedDial> {
                 fontWeight: FontWeight.w500,
                 color: Colors.white,
                 fontSize: 14.0),
-            labelBackgroundColor: Colors.green)
+            labelBackgroundColor: Colors.green),
+
+        SpeedDialChild(
+            child: const Hero(
+              tag: _heroAddTodo,
+              child: Icon(
+                Icons.qr_code_scanner_outlined,
+              ),
+            ),
+            backgroundColor: Colors.green,
+            onTap: () => Navigator.of(context).pushNamed(QRScanner.routeName),
+            label: 'QR Scan',
+            labelStyle: const TextStyle(
+                fontWeight: FontWeight.w500,
+                color: Colors.white,
+                fontSize: 14.0),
+            labelBackgroundColor: Colors.green),
       ],
     );
   }

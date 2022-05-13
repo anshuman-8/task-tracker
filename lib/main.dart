@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:task_tracker/modals/todo.dart';
-import 'package:task_tracker/modals/user.dart';
 import 'package:task_tracker/screens/home_screen.dart';
+import 'package:task_tracker/screens/qr-scanner.dart';
 import 'package:task_tracker/screens/settings.dart';
 import 'package:task_tracker/screens/user_details_screen.dart';
 import 'package:provider/provider.dart';
+import 'package:task_tracker/screens/video-screen.dart';
 import 'package:task_tracker/utils/colors.dart';
-// import './database/todo_database.dart';
+import 'package:flutter/services.dart';
+import './modals/user.dart';
 
 void main() {
-  runApp(MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((value) => runApp(MyApp()));
+  // runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -39,6 +44,9 @@ class MyApp extends StatelessWidget {
           HomeScreen.routeName: (context) => HomeScreen(),
           Settings.routeName: (context) => Settings(),
           UserDetails.routeName: (context) => UserDetails(),
+          VideoScreen.routeName: (context) => VideoScreen(),
+          Settings.routeName: (context) => Settings(),
+           QRScanner.routeName:(context) => QRScanner(),
         },
       ),
     );
@@ -46,21 +54,7 @@ class MyApp extends StatelessWidget {
 }
 
 
+// AIzaSyBUrZ_7mDrM7tz1KTRskMgzcPR_i0pX5rc
+// AIzaSyBUrZ_7mDrM7tz1KTRskMgzcPR_i0pX5rc
 
 
-
-
-
-// MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       title: 'Task Tracker',
-//       theme: ThemeData(
-//         primarySwatch: Colors.blue,
-//       ),
-//       home: HomeScreen(),
-//       routes: {
-//         HomeScreen.routeName: (context) => HomeScreen(),
-//         Settings.routeName: (context) => Settings(),
-//         UserDetails.routeName: (context) => UserDetails(),
-//       },
-//     );
