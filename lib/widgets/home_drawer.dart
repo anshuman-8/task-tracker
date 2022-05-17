@@ -23,7 +23,7 @@ class HomeDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: MediaQuery.of(context).size.width * 0.67,
+        width: MediaQuery.of(context).size.width * 0.6,
         child: Drawer(
           child: SingleChildScrollView(
             child: Container(

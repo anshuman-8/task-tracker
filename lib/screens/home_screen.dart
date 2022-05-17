@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
+import 'package:task_tracker/screens/habit.dart';
 import 'package:task_tracker/screens/settings-items.dart';
 import 'package:task_tracker/screens/settings.dart';
 // import 'package:task_tracker/widgets/bottom_nav.dart';
@@ -30,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final _item = <Widget>[
     Icon(EvaIcons.videoOutline),
-    Icon(EvaIcons.twitter),
+    Icon(EvaIcons.awardOutline),
     Icon(
       Icons.home_filled,
       // color: Colors.teal,
@@ -38,10 +39,10 @@ class _HomeScreenState extends State<HomeScreen> {
     Icon(EvaIcons.checkmarkCircle),
     Icon(EvaIcons.settings)
   ];
-  final pageNames = <String>["Videos", "Twitter", "Home", "Todo", "Settings"];
+  final pageNames = <String>["Videos", "Habits", "Home", "Todo", "Settings"];
   final screens = <Widget>[
     VideoScreen(),
-    TwitterScreen(),
+    HabitPage(),
     HomeScreenItems(),
     HomeScreenItems(),
     SettingsItems()

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task_tracker/modals/todo.dart';
 import 'package:task_tracker/screens/home_screen.dart';
+import 'package:task_tracker/screens/qr-generate.dart';
 import 'package:task_tracker/screens/qr-scanner.dart';
 import 'package:task_tracker/screens/settings.dart';
 import 'package:task_tracker/screens/user_details_screen.dart';
@@ -46,7 +47,8 @@ class MyApp extends StatelessWidget {
           UserDetails.routeName: (context) => UserDetails(),
           VideoScreen.routeName: (context) => VideoScreen(),
           Settings.routeName: (context) => Settings(),
-           QRScanner.routeName:(context) => QRScanner(),
+          QRScanner.routeName: (context) => QRScanner(),
+          GenerateQR.routeName: (context) => GenerateQR(),
         },
       ),
     );

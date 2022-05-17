@@ -111,13 +111,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "5.4.3+7"
-  flutter_lints:
-    dependency: "direct dev"
-    description:
-      name: flutter_lints
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.4"
   flutter_plugin_android_lifecycle:
     dependency: transitive
     description:
@@ -191,13 +184,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.3"
-  lints:
-    dependency: transitive
-    description:
-      name: lints
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.1"
   matcher:
     dependency: transitive
     description:
@@ -282,6 +268,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "6.0.2"
+  qr:
+    dependency: transitive
+    description:
+      name: qr
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.0"
   qr_code_scanner:
     dependency: "direct dev"
     description:
@@ -289,6 +282,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.7.0"
+  qr_flutter:
+    dependency: "direct dev"
+    description:
+      name: qr_flutter
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.0.0"
   shared_preferences:
     dependency: "direct dev"
     description:

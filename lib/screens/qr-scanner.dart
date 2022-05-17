@@ -2,6 +2,7 @@ import 'package:clipboard/clipboard.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
+import 'package:task_tracker/screens/qr-generate.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class QRScanner extends StatefulWidget {
@@ -39,16 +40,34 @@ class _QRScannerState extends State<QRScanner> {
                   Positioned(
                       top: 35,
                       left: 10,
-                      child: IconButton(
-                        color: Colors.green,
-                        onPressed: () {
-                          Navigator.of(context).pop();
-                        },
-                        icon: const Icon(
-                          Icons.arrow_back_ios_new,
-                          color: Colors.teal,
-                          size: 30,
-                        ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          IconButton(
+                            color: Colors.green,
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                            icon: const Icon(
+                              Icons.arrow_back_ios_new,
+                              color: Colors.teal,
+                              size: 30,
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 50,
+                          ),
+                          ElevatedButton.icon(
+                              style: ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStateProperty.all(Colors.teal)),
+                              onPressed: () {
+                                Navigator.of(context)
+                                    .pushNamed(GenerateQR.routeName);
+                              },
+                              icon: const Icon(Icons.qr_code_sharp),
+                              label: const Text("Generate QR"))
+                        ],
                       )),
                 ],
               )),
